@@ -1,0 +1,103 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='UTF-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no')
+    link(rel='stylesheet', href='http://cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css')
+    link(rel='stylesheet', href='stylesheets/custom.css')
+    link(rel='stylesheet', href='stylesheets/jquery.Jcrop.css')
+    link(rel='stylesheet', href='stylesheets/style.css')
+    title Document
+  body
+    #pageBox.container-fluid
+      .x-title
+        h2
+          | 请填写相关信息
+          small 每一项都必须填写
+        .clearfix
+      .x-content
+        .form-horizontal(style='margin-left:10px;')
+          .form-group
+            label.col-md-2.col-md-offset-2.control-label(for='title') 诗的题目:
+            .col-md-4
+              input#title.form-control(type='text', name='title', placeholder='诗的题目')
+            .clearfix
+          .form-group
+            label.col-md-2.col-md-offset-2.control-label(for='comment') 诗的作者：
+            .col-md-4
+              input#author.form-control(type='text', name='author', placeholder='诗的作者')
+            .clearfix
+          .form-group
+            label.col-md-2.col-md-offset-2.control-label(for='content') 诗的内容：
+            .col-md-4
+              textarea#content.form-control(name='content', rows='10')
+            .clear
+          .form-group
+            label.col-md-2.col-md-offset-2.control-label(for='comment') 诗的评论：
+            .col-md-4
+              textarea#comment.form-control(name='comment', rows='10')
+            .clear
+          .form-group
+            label.col-md-2.col-md-offset-2.control-label(for='pic') 上传图片：
+            .col-md-4
+              input#pic.form-control(type='file', name='pic', accept='image/gif, image/jpeg', style='border-width:0;')
+            #cut.col-md-6.col-md-offset-3(style='margin-top:10px;')
+              img#target.col-md-12(src='', alt='')
+              // </div>
+              // <div class="col-md-3">
+              #preview-pane
+                .preview-container
+                  img.jcrop-preview(src='', alt='', style='width:100%;')
+            #coordinate.col-md-offset-4.col-md-6(style='margin-top:10px;')
+              label.text-muted(for='')
+                | X1:
+                span#x1.text-primary
+              label.text-muted(for='')
+                | Y1:
+                span#y1.text-primary
+              label.text-muted(for='')
+                | X2:
+                span#x2.text-primary
+              label.text-muted(for='')
+                | Y2:
+                span#y2.text-primary
+              label.text-muted(for='')
+                | W:
+                span#w.text-primary
+              label.text-muted(for='')
+                | H:
+                span#h.text-primary
+            .clear
+          .row
+            .col-md-offset-3
+              h4#text-error.text-warning.hidden 错误信息
+          .row(style='margin-top:10px;')
+            .form-group
+              .col-md-6.col-md-offset-4
+                button#submit.btn.btn-primary(style='width:100px;font-size:1.5em;') 提交
+              .clear
+    // <script type="text/javascript" src="http:////cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
+    script(type='text/javascript', src='javascripts/jquery.min.js')
+    script(type='text/javascript').
+      var dataAjax;
+      var $title=$("#title");
+      var $author=$("#author");
+      var $content=$("#content");
+      var $comment=$("#comment");
+      var $submit=$("#submit");
+      var $pic=$("#pic");
+      var $textError=$("#text-error");
+      //裁剪部分
+      var $target=$("#target");
+      var $cut=$("#cut");
+      var $previewImg=$(".jcrop-preview");
+      var $x1=$("#coordinate #x1");
+      var $y1=$("#coordinate #y1");
+      var $x2=$("#coordinate #x2");
+      var $y2=$("#coordinate #y2");
+      var $w=$("#coordinate #w");
+      var $h=$("#coordinate #h");
+    script(type='text/javascript', src='javascripts/jquery.Jcrop.js')
+    script(type='text/javascript', src='javascripts/init.js')
+    script(type='text/javascript', src='javascripts/cut.js')
+    script(type='text/javascript', src='javascripts/submit.js')

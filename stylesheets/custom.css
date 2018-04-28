@@ -1,0 +1,41 @@
+body{
+	background-color:#EDEDED;
+	color:#485869;
+	font-family: "Helvetica Neue", Roboto, Arial, "Droid Sans", sans-serif;
+}
+#pageBox{
+	margin:10px 10px;
+	background: #F7F7F7;
+	padding: 10px;
+	border:1px solid #E6E9ED;
+}
+.no-padding{
+			padding:0;
+		}
+.clear{
+	clear:both;
+}
+#pageBox .x-title{
+	border-bottom: 2px solid #E6E9ED;
+	padding: 1px 5px 6px;
+   	 margin-bottom: 10px;
+   	 text-align: center;
+}
+.x-title h2{
+	margin: 5px 0 6px;
+	display: block;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	 white-space: nowrap;
+}
+#pageBox .x-content{
+	    padding: 0 5px 6px;
+	    position: relative;
+	    width: 100%;
+	    float: left;
+	    clear: both;
+	    margin-top: 5px;
+}
+#coordinate label{
+	min-width: 8rem;
+}	

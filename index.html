@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css">
+	<link rel="stylesheet" href="stylesheets/custom.css">
+	<link rel="stylesheet" href="stylesheets/jquery.Jcrop.css">
+	<link rel="stylesheet" href="stylesheets/style.css">
+	<title>Document</title>
+</head>
+<body>
+	<div class="container-fluid" id="pageBox">
+		<div class="x-title">
+			<h2>请填写相关信息
+				<small>每一项都必须填写</small>
+			</h2>
+			<div class="clearfix"></div>
+		</div>
+		<div class="x-content">
+			<div  style="margin-left:10px;" class="form-horizontal">
+				<div class="form-group">
+					<label for="title" class="col-md-2 col-md-offset-2 control-label">诗的题目:</label>
+					<div class="col-md-4">
+						<input class="form-control" type="text" id="title" name="title" placeholder="诗的题目">
+					</div>
+					<div class="clearfix"></div>
+				</div>
+				<div class="form-group">
+					<label for="comment" class="col-md-2 col-md-offset-2 control-label">诗的作者：</label>
+					<div class="col-md-4">
+						<input class="form-control" type="text" id="author" name="author" placeholder="诗的作者">
+					</div>
+					<div class="clearfix"></div>
+				</div>
+				<div class="form-group">
+					<label for="content" class="col-md-2 col-md-offset-2 control-label">诗的内容：</label>
+					<div class="col-md-4">
+						<textarea name="content" id="content" rows="10" class="form-control"></textarea>
+					</div>
+					<div class="clear"></div>
+				</div>
+				<div class="form-group">
+					<label for="comment" class="col-md-2 col-md-offset-2 control-label">诗的评论：</label>
+					<div class="col-md-4">
+						<textarea name="comment" id="comment" rows="10" class="form-control"></textarea>
+					</div>	
+					<div class="clear"></div>	
+				</div>
+				<div class="form-group">
+					<label for="pic" class="col-md-2 col-md-offset-2 control-label">上传图片：</label>
+					<div class="col-md-4">
+						<input class="form-control" type="file" id="pic" name="pic" accept="image/gif, image/jpeg"  style="border-width:0;">
+					</div>
+					<div id="cut" class="col-md-6 col-md-offset-3" style="margin-top:10px;">
+						<img src="" id="target" alt="" class="col-md-12"></img>
+					<!-- </div> -->
+				<!-- 	<div class="col-md-3"> -->
+						<div id="preview-pane">
+							<div class="preview-container">
+								<img src="" alt="" class="jcrop-preview" style="width:100%;">
+							</div>
+						</div>
+					</div>
+					<div class="col-md-offset-4 col-md-6" id="coordinate" style="margin-top:10px;">
+						<label for="" class="text-muted">X1:<span id="x1" class="text-primary"></span></label>
+						<label for="" class="text-muted">Y1:<span id="y1" class="text-primary"></span></label>
+						<label for="" class="text-muted">X2:<span id="x2" class="text-primary"></span></label>
+						<label for="" class="text-muted">Y2:<span id="y2" class="text-primary"></span></label>
+						<label for="" class="text-muted">W:<span id="w" class="text-primary"></span></label>
+						<label for="" class="text-muted">H:<span id="h" class="text-primary"></span></label>
+					</div>
+					<div class="clear"></div>
+				</div>
+				<div class="row">
+					<div class="col-md-offset-3">
+						<h4 class="text-warning hidden" id="text-error">错误信息</h4>
+					</div>
+				</div>
+				<div class="row" style="margin-top:10px;">
+					<div class="form-group">
+						<div  class="col-md-6 col-md-offset-4">
+							<button id="submit" class="btn btn-primary" style="width:100px;font-size:1.5em;">提交</button>
+						</div>
+						<div class="clear"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+<!-- <script type="text/javascript" src="http:////cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script> -->
+<script type="text/javascript" src="javascripts/jquery.min.js"></script>
+<script type="text/javascript">
+	var dataAjax;
+	var $title=$("#title");
+	var $author=$("#author");
+	var $content=$("#content");
+	var $comment=$("#comment");
+	var $submit=$("#submit");
+	var $pic=$("#pic");
+	var $textError=$("#text-error");
+	//裁剪部分
+	var $target=$("#target");
+	var $cut=$("#cut");
+	var $previewImg=$(".jcrop-preview");
+	var $x1=$("#coordinate #x1");	
+	var $y1=$("#coordinate #y1");	
+	var $x2=$("#coordinate #x2");	
+	var $y2=$("#coordinate #y2");	
+	var $w=$("#coordinate #w");	
+	var $h=$("#coordinate #h");	
+</script>
+<script type="text/javascript" src="javascripts/jquery.Jcrop.js"></script>
+<script type="text/javascript" src="javascripts/init.js"></script>
+<script type="text/javascript" src="javascripts/cut.js"></script>
+<script type="text/javascript" src="javascripts/submit.js"></script>
+</body>
+</html>
